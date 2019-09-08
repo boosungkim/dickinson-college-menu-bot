@@ -1,0 +1,5 @@
+.DS_Store
+venv
+Resources
+config.ini
+email.txt
