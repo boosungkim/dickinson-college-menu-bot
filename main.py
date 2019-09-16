@@ -86,7 +86,7 @@ def main():
     breakfast = formatMenu(threeMeals[0])
     lunch = formatMenu(threeMeals[1])
     dinner = formatMenu(threeMeals[2])
-    message = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V0.9.\n" + "My GitHub link: https://github.com/boosungkim/Dickinson_Menu_Bot\n\n" + "Today's menu is: \n \n" + breakfast + "\n \n" + lunch + "\n \n" + dinner + "\n \n \n" + "Have a nice day!"
+    message = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V0.9.1\n" + "Today's menu is: \n \n" + breakfast + "\n \n" + lunch + "\n \n" + dinner + "\n \n \n" + "Have a nice day! \n" + "Project GitHub link: https://github.com/boosungkim/Dickinson_Menu_Bot"
     parser = ConfigParser()
     parser.read('config.ini')
     # Getting info to log in
