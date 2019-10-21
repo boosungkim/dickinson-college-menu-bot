@@ -3,7 +3,7 @@ package Menu;
 public class DiningMenu {
 	public DiningMenu() {
 		GrabbingMenu.scanMenu();
-		
+//		System.out.println(formatMenu());
 	}
 	
 	
@@ -15,40 +15,25 @@ public class DiningMenu {
 	
 	
 	public String formatMenu() {
-		String tempMB = "";
-		String tempML = "";
-		String tempMD = "";
-		
-		for(int ln = 0; ln < divideLines(GrabbingMenu.DINING, GrabbingMenu.FIRST).length; ln++) {
-			tempMB = tempMB + divideLines(GrabbingMenu.DINING, GrabbingMenu.FIRST)[ln] + "\n";
-		}
-		formatChar(tempMB);
-		
-		for(int ln = 0; ln < divideLines(GrabbingMenu.DINING, GrabbingMenu.SECOND).length; ln++) {
-			tempML = tempML + divideLines(GrabbingMenu.DINING, GrabbingMenu.SECOND)[ln] + "\n";
-		}
-		formatChar(tempML);
-		
-		for(int ln = 0; ln < divideLines(GrabbingMenu.DINING, GrabbingMenu.THIRD).length; ln++) {
-			tempMD = tempMD + divideLines(GrabbingMenu.DINING, GrabbingMenu.THIRD)[ln] + "\n";
-		}
-		formatChar(tempMD);
-		
 		String diningEmail = "Today's Dining Hall Menu is:\n"
 				+ "---Breakfast---\n"
-				+ tempMB
+				+ formatSection("", GrabbingMenu.DINING, GrabbingMenu.FIRST)
 				+ "---Lunch---\n"
-				+ tempML
+				+ formatSection("", GrabbingMenu.DINING, GrabbingMenu.SECOND)
 				+ "---Dinner---\n"
-				+ tempMD
+				+ formatSection("", GrabbingMenu.DINING, GrabbingMenu.THIRD)
 				+ "\n\n";
 		return diningEmail;
 	}
 	
 	
-	public void formatChar(String line) {
+	public String formatSection(String line, int place, int meal) {
+		for(int ln = 0; ln < divideLines(place, meal).length; ln++) {
+			line = line + divideLines(place, meal)[ln] + "\n";
+		}
 		line = line.replaceAll(":", ": ");
 		line = line.replaceAll("w/", "with ");
 		line = line.replaceAll("&", "and");
+		return line;
 	}
 }

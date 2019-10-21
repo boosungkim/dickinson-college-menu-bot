@@ -3,3 +3,4 @@ venv
 config.ini
 email.txt
 /.metadata/
+Config.properties
