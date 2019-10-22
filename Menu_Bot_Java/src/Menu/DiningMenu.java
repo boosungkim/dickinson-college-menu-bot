@@ -3,13 +3,12 @@ package Menu;
 public class DiningMenu {
 	public DiningMenu() {
 		GrabbingMenu.scanMenu();
-//		System.out.println(formatMenu());
 	}
 	
 	
 	public String[] divideLines(int location, int meal) {
 		String[] menuList = GrabbingMenu.getMenu(location)[meal].split("(?=Soup:)|(?=Entree:)|(?=Grain:)"
-				+ "|(?=Wrap:)|(?=Grill:)|(?=Side:)");
+				+ "|(?=Wrap:)|(?=Grill:)|(?=Side:)|(?=Lunch Special:)|(?=Dinner Special:)|(?=Nightly Special:)");
 		return menuList;
 	}
 	

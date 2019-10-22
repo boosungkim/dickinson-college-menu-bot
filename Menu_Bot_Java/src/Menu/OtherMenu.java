@@ -1,19 +1,26 @@
 package Menu;
 
 public class OtherMenu extends DiningMenu{
-	public OtherMenu() {
+	public int wMeal;
+	public OtherMenu(int w) {
 		super();
-//		System.out.println(formatMenu());
-	}
+		wMeal = w;
+		}
 	
 	
 	public String formatMenu() {
-		String diningEmail = "Today's Dining Hall Menu is:\n"
-				+ "---Lunch---\n"
-				+ formatSection("", GrabbingMenu.DINING, GrabbingMenu.FIRST)
-				+ "---Dinner---\n"
-				+ formatSection("", GrabbingMenu.DINING, GrabbingMenu.SECOND)
-				+ "\n\n";
+		String diningEmail = "";
+		if(wMeal == GrabbingMenu.UNION) {
+			diningEmail = "Today's Union Station Menu is:\n";
+		}else if(wMeal == GrabbingMenu.KOVE) {
+			diningEmail = "Today's Kove Menu is:\n";
+		}
+		diningEmail =	diningEmail
+						+ "---Lunch---\n"
+						+ formatSection("", wMeal, GrabbingMenu.FIRST)
+						+ "---Dinner---\n"
+						+ formatSection("", wMeal, GrabbingMenu.SECOND)
+						+ "\n\n";
 		return diningEmail;
 	}
 }
