@@ -29,7 +29,7 @@ public class sendEmail {
 		try {
 		    is = new FileInputStream(fileName);
 		} catch (FileNotFoundException ex) {
-			System.out.println("FileNoutFoundException thrown in getEmailList");
+			System.out.println("FileNotFoundException thrown in getEmailList");
 		}
 		try {
 		    prop.load(is);
@@ -37,12 +37,14 @@ public class sendEmail {
 			System.out.println("IOException thrown in getEmailList");
 		}
 		
-		File file = new File(prop.getProperty("txtLocation")); 
+		File file = new File("email.txt"); 
 	    Scanner sc = new Scanner(file);
 	      sc.useDelimiter("\\Z"); 
 	      br = br + sc.next();
 	      br = br.replaceAll("\\s+",",");
 	      t = br.split(",");
+//	      System.out.println(t[0]);
+	    sc.close();
 	}
 	
 	
@@ -51,7 +53,7 @@ public class sendEmail {
 		OtherMenu union = new OtherMenu(GrabbingMenu.UNION);
 		OtherMenu kove = new OtherMenu(GrabbingMenu.KOVE);
 		
-		mes = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V2.0.0.\n\n"
+		mes = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V2.1.0.\n\n"
 				+ hall.formatMenu() + union.formatMenu() + kove.formatMenu()
 				+ "Have a nice day!\n"
 				+ "Project GitHub link: https://github.com/boosungkim/Dickinson_Menu_Bot";
@@ -59,7 +61,7 @@ public class sendEmail {
 	}
 	
 	
-	public static void sendMail() throws FileNotFoundException {
+	public static void sendMail() throws IOException {
 		getEmailList();
 		String fileName = "Config.properties";
 		Link date = new Link();
@@ -67,7 +69,7 @@ public class sendEmail {
 		try {
 		    is = new FileInputStream(fileName);
 		} catch (FileNotFoundException ex) {
-			System.out.println("FileNoutFoundException thrown in sendMail");
+			System.out.println("FileNotFoundException thrown in sendMail");
 		}
 		try {
 		    prop.load(is);
@@ -111,11 +113,17 @@ public class sendEmail {
 
         } catch (MessagingException e) {
             e.printStackTrace();
+        } finally {
+        	is.close();
         }
 	}
 
-    public static void main(String[] args) throws FileNotFoundException {
-    	sendMail();
+    public static void main(String[] args) throws IOException {
+    	try{
+    		sendMail();
+    	} catch(IOException e) {
+    		System.out.println("Program failed");
+    	}
     }
 
 }

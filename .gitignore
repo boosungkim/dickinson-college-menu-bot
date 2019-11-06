@@ -1,6 +1,6 @@
 .DS_Store
 venv
 config.ini
+Config.properties
 email.txt
 /.metadata/
-Config.properties
