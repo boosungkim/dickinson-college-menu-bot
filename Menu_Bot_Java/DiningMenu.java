@@ -7,7 +7,7 @@ public class DiningMenu {
 	
 	
 	public String[] divideLines(int location, int meal) {
-		String[] menuList = GrabbingMenu.getMenu(location)[meal].split("(?=Soup:)|(?=Entree:)|(?=Grain:)"
+		String[] menuList = GrabbingMenu.getMenu(location)[meal].split("(?=Kosher Entree:)|(?=Vegan Entree:)|(?=Starch:)|(?=Vegetable:)|(?=Salad:)|(?=Soup:)|(?=Entree:)|(?=Grain:)"
 				+ "|(?=Wrap:)|(?=Grill:)|(?=Side:)|(?=Lunch Special:)|(?=Dinner Special:)|(?=Nightly Special:)");
 		return menuList;
 	}

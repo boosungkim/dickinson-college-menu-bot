@@ -53,7 +53,7 @@ public class SendEmail {
 		OtherMenu union = new OtherMenu(GrabbingMenu.UNION);
 		OtherMenu kove = new OtherMenu(GrabbingMenu.KOVE);
 		
-		mes = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V2.2.1.\n\n"
+		mes = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V2.2.2.\n\n"
 				+ hall.formatMenu() + union.formatMenu() + kove.formatMenu()
 				+ "Have a nice day!\n"
 				+ "Project GitHub link: https://github.com/boosungkim/Dickinson_Menu_Bot";
