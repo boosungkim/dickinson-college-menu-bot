@@ -1,4 +1,4 @@
-package Email;
+// package Email;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,10 +12,10 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import Menu.DiningMenu;
-import Menu.GrabbingMenu;
-import Menu.Link;
-import Menu.OtherMenu;
+// import Menu.DiningMenu;
+// import Menu.GrabbingMenu;
+// import Menu.Link;
+// import Menu.OtherMenu;
  
 public class sendEmail {
 	private static String br = "";
@@ -53,7 +53,7 @@ public class sendEmail {
 		OtherMenu union = new OtherMenu(GrabbingMenu.UNION);
 		OtherMenu kove = new OtherMenu(GrabbingMenu.KOVE);
 		
-		mes = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V2.1.0.\n\n"
+		mes = "Hello, I am Boo Sung Kim's Dickinson Menu Bot V2.2.0.\n\n"
 				+ hall.formatMenu() + union.formatMenu() + kove.formatMenu()
 				+ "Have a nice day!\n"
 				+ "Project GitHub link: https://github.com/boosungkim/Dickinson_Menu_Bot";

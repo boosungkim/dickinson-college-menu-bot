@@ -1,4 +1,4 @@
-package Menu;
+// package Menu;
 
 public class OtherMenu extends DiningMenu{
 	public int wMeal;
