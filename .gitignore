@@ -4,3 +4,4 @@ config.ini
 Config.properties
 email.txt
 /.metadata/
+__pycache__
